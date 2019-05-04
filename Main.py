@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_cors import CORS
 import random 
 
@@ -8,8 +8,10 @@ CORS(app)
 @app.route("/", methods = ['POST'])
 def generatePath ():
     paths = ['up','down', 'left', 'right']
-    return random.choice(paths)
+    return str(random.choice(paths))
 
 
-def renderFrontEnd():
-    return render_template("Main.html")
+# def renderFrontEnd():
+#     return render_template("Main.html")
+
+print (generatePath())
