@@ -12,12 +12,39 @@ def overlapMask(cap, fgmask, width, height):
     return cap
 
 while(1):
+    lower = np.array([0, 48, 80], dtype = "uint8")
+    upper = np.array([20, 255, 255], dtype = "uint8")
     ret, frame = cap.read()
     fgmask = fgbg.apply(frame)
     k = cv2.waitKey(30) & 0xff
     width = 480;
     height = 640;
-    cv2.imshow('output',overlapMask(frame,fgmask, width, height))
+    postBackSubt = overlapMask(frame, fgmask, width, height)
+    frame = postBackSubt
+    lower = [50, 50,50]
+    upper = [255, 200, 200]
+    lower = np.array(lower, dtype = "uint8")
+    upper = np.array(upper, dtype = "uint8")
+    mask = cv2.inRange(frame, lower, upper)
+    output = cv2.bitwise_and(frame, frame, mask = mask)
+    gray = cv2.cvtColor(output, cv2.COLOR_BGR2GRAY)
+    ret, thresh = cv2.threshold(gray, 65, 255,cv2.THRESH_BINARY)
+    contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+    area = 0
+    largestCnt = 0
+    for cnt in contours:
+        current = cv2.contourArea(cnt)
+        if current > area:
+            area = current
+            largestCnt = cnt
+    print(area)
+    x,y,w,h = cv2.boundingRect(largestCnt)
+    centerX = x + w /2
+    centerY = y + h / 2
+
+    cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,0),4)
+    cv2.imshow("images", frame)
+
     if k == 27:
         break
 
