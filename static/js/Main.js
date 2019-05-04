@@ -1,3 +1,5 @@
+document.getElementById("button").addEventListener("click", addCommand);
+
 var commands = [];
 
 function addCommand (){
@@ -7,3 +9,6 @@ function addCommand (){
             commands.push(toAdd);
         })
 }
+
+addCommand();
+console.log(commands);
