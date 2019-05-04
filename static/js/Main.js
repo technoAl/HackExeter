@@ -12,6 +12,22 @@ function addCommand (){
             console.log(toAdd);
             commands.push(toAdd)
             console.log(commands)
-           
         })
 }
+
+function removeCommand (){
+    commands.shift();
+}
+
+function createCommandElement (command){
+    if (command.equals('up')){
+        var img = document.createElement("img");
+    } else if (command.equals('down')){
+
+    } else if (command.equals('left')){
+
+    } else if(command.equals('right')){
+
+    }
+}
+    

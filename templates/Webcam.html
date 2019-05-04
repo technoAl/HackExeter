@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <style>
-    img{
-        position:absolute;
-        left: 0px;
-        right: 0px;
-        z-index: 2;
-    }
-    </style>
-</head>
-<body>
-    <script src="./../static/js/Main.js" type="text/javascript"></script>
-    <img src="./../images/downArrow.png" >
+  <title>getUserMedia Example</title>
+  <meta charset="UTF-8"/>
+  <style>
+#container {
+	margin: 0px auto;
+	width: 500px;
+	height: 375px;
+	border: 10px #333 solid;
+}
+#videoElement {
+	width: 500px;
+	height: 375px;
+	background-color: #666;
+}
+</style>
+  </head>
+  <body>
     <video id="camera" autoplay = "true" > </video>
     <script>
       var video = document.getElementById("camera");
@@ -36,5 +41,5 @@
         }
       //video.play();
       </script>
-</body>
-</html>
+  </body>
+  </html>
