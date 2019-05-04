@@ -21,7 +21,10 @@ function removeCommand (){
 
 function createCommandElement (command){
     if (command.equals('up')){
-        var img = document.createElement("img");
+        const elem = document.createElement('img');
+        elem.src = "../images/upArrow.png";
+        const parentElement = // find the parent element
+        parentElement.appendChild(elem);
     } else if (command.equals('down')){
 
     } else if (command.equals('left')){
