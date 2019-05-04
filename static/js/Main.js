@@ -1,22 +1,10 @@
 
 var commands = [];
 
-while (true){
-    addCommand();
-    createCommandElement(commands[commands.length - 1])
-}
+addCommand();
 
 
-function createCommandElementforReal(){
-    for (i = 0; i < commands.length; i++){
-        console.log(i);
-        createCommandElement(commands[i]);
-        
-    }      
-}
 
-
-createCommandElementforReal();
 
 console.log("print commands: " + commands)
 //add a bunch of starting commands
@@ -30,6 +18,7 @@ function addCommand (){
             var toAdd = response;
             console.log(toAdd);
             commands.push(toAdd)
+            createCommandElement(commands[commands.length - 1])
             //console.log(commands)
         })
 }
@@ -68,5 +57,5 @@ function createCommandElement (command){
         console.log("failed")
     }
 }
-addCommand();
-console.log("out")
+
+
