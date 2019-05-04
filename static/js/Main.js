@@ -1,10 +1,11 @@
 
 var commands = [];
 
-addCommand();
-addCommand();
-addCommand();
-addCommand();
+while (true){
+    addCommand();
+    createCommandElement(commands[commands.length - 1])
+}
+
 
 function createCommandElementforReal(){
     for (i = 0; i < commands.length; i++){
@@ -67,4 +68,5 @@ function createCommandElement (command){
         console.log("failed")
     }
 }
-    
+addCommand();
+console.log("out")

@@ -2,20 +2,24 @@ import numpy as np
 import cv2
 
 cap = cv2.VideoCapture(0)
+fgbg = cv2.createBackgroundSubtractorMOG2()
 
-while (True):
-    # Capture frame-by-frame
+def overlapMask(cap, fgmask, width, height):
+    for x in range(0, width):
+        for y in range(0, height):
+            if fgmask[x][y] == 0:
+                cap[x][y] = 0
+    return cap
+
+while(1):
     ret, frame = cap.read()
-
-    # Our operations on the frame come here
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
-    # Display the resulting frame
-    cv2.imshow('frame', frame)
-    cv2.imshow('gray', gray)
-    if cv2.waitKey(20) & 0xFF == ord('q'):
+    fgmask = fgbg.apply(frame)
+    k = cv2.waitKey(30) & 0xff
+    width = 480;
+    height = 640;
+    cv2.imshow('output',overlapMask(frame,fgmask, width, height))
+    if k == 27:
         break
 
-# When everything done, release the capture
 cap.release()
 cv2.destroyAllWindows()
