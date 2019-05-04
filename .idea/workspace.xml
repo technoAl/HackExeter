@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="064aed5c-a67a-4c4f-af2c-4a02aadcac7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/js/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,9 +16,7 @@
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
+              <caret column="50" selection-start-column="50" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -53,8 +50,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/templates/Main.html" />
+        <option value="$PROJECT_DIR$/Main.py" />
       </list>
     </option>
   </component>
@@ -164,9 +161,7 @@
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+          <caret column="50" selection-start-column="50" selection-end-column="50" />
         </state>
       </provider>
     </entry>
