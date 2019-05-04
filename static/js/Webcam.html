@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>getUserMedia Example</title>
+  <meta charset="UTF-8"/>
+  <style>
+#container {
+	margin: 0px auto;
+	width: 500px;
+	height: 375px;
+	border: 10px #333 solid;
+}
+#videoElement {
+	width: 500px;
+	height: 375px;
+	background-color: #666;
+}
+</style>
+  </head>
+  <body>
+    <video id="camera" autoplay = "true" > </video>
+    <script>
+      var video = document.getElementById("camera");
+
+      if (navigator.getUserMedia) {
+        navigator.getUserMedia({ video: true }, HV, VideoError);
+        console.log("reach");
+        }
+        function HV(stream){
+          console.log("reach");
+          console.log(stream);
+          if(video){
+            console.log("true");
+          }
+          video.srcObject = stream;
+          console.log("reach1");
+        }
+
+        function VideoError(e){
+          console.log("Something went wrong!");
+        }
+      //video.play();
+      </script>
+  </body>
+  </html>
