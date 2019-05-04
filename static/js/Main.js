@@ -1,9 +1,26 @@
-document.getElementById("button").addEventListener("click", addCommand);
+
 var commands = [];
 
-console.log(addCommand());
+addCommand();
+addCommand();
+addCommand();
+addCommand();
+
+function createCommandElementforReal(){
+    for (i = 0; i < commands.length; i++){
+        console.log(i);
+        createCommandElement(commands[i]);
+        
+    }      
+}
+
+
+createCommandElementforReal();
+
+console.log("print commands: " + commands)
+//add a bunch of starting commands
 function addCommand (){
-    //console.log("hiS");
+
     fetch('http://localhost:5000/', {method: "POST"})
         .then(function(response) {
             return response.text();
@@ -12,7 +29,7 @@ function addCommand (){
             var toAdd = response;
             console.log(toAdd);
             commands.push(toAdd)
-            console.log(commands)
+            //console.log(commands)
         })
 }
 
@@ -21,26 +38,33 @@ function removeCommand (){
 }
 
 function createCommandElement (command){
-    if (command.equals('up')){
+    console.log("a: " + command)
+    if (command == "up"){
         const elem = document.createElement('img');
         elem.src = "../images/upArrow.png";
         const parentElement = document.getElementById('parent')// find the parent element
         parentElement.appendChild(elem);
-    } else if (command.equals('down')){
+        console.log("added")
+    } else if (command == "down"){
         const elem = document.createElement('img');
         elem.src = "../images/downArrow.png";
         const parentElement = document.getElementById('parent')// find the parent element
         parentElement.appendChild(elem);
-    } else if (command.equals('left')){
+        console.log("added")
+    } else if (command == "left"){
         const elem = document.createElement('img');
         elem.src = "../images/leftArrow.png";
         const parentElement = document.getElementById('parent')// find the parent element
         parentElement.appendChild(elem);
-    } else if(command.equals('right')){
+        console.log("added")
+    } else if(command == "right"){
         const elem = document.createElement('img');
         elem.src = "../images/rightArrow.png";
         const parentElement = document.getElementById('parent')// find the parent element
         parentElement.appendChild(elem);
+        console.log("added")
+    } else {
+        console.log("failed")
     }
 }
     
