@@ -12,6 +12,25 @@ function addCommand (){
             console.log(toAdd);
             commands.push(toAdd)
             console.log(commands)
-           
         })
 }
+
+function removeCommand (){
+    commands.shift();
+}
+
+function createCommandElement (command){
+    if (command.equals('up')){
+        const elem = document.createElement('img');
+        elem.src = "../images/upArrow.png";
+        const parentElement = // find the parent element
+        parentElement.appendChild(elem);
+    } else if (command.equals('down')){
+
+    } else if (command.equals('left')){
+
+    } else if(command.equals('right')){
+
+    }
+}
+    
